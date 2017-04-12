@@ -13,8 +13,9 @@ Param(
     [Parameter(Mandatory=$false)] [String] $TitleHPos = "Center",
     [ValidateSet("Top", "Middle", "Bottom")]
     [Parameter(Mandatory=$false)] [String] $TitleVPos = "Bottom",
-    [Parameter(Mandatory=$false)] [Int] $TitleSize = "14",
-    [Parameter(Mandatory=$false)] [String] $TitleColor = "#cfcfcf",
+    [Parameter(Mandatory=$false)] [Int] $TitleSize = "12",
+    [Parameter(Mandatory=$false)] [String] $TitleColor = "#d8d8d8",
+    [Parameter(Mandatory=$false)] [Int] $TitleMargin = 0,
     [Parameter(Mandatory=$false)] [Switch] $TitleVertical = $false
 )
  
@@ -72,7 +73,7 @@ function _Add-Title() {
         $g = [Graphics]::FromImage($img)
         $g.SmoothingMode = "AntiAlias"
         
-        $edgeOffset = $TitleSize / 1.6
+        $edgeOffset = $TitleMargin
         $textRect = [RectangleF]::new(
             $edgeOffset, $edgeOffset,
             $img.Width - 2 * $edgeOffset, $img.Height - 2 * $edgeOffset)

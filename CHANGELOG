@@ -1,2 +1,7 @@
+# v0.2.0 (2017-04-12)
+- Add option `-TitleMargin`
+- No more default margin of `$TitleSize / 1.6`
+- Improve README
+
 # v0.1.0 (2017-04-11)
 - Initial version
