@@ -110,7 +110,7 @@ $bingResponse = Invoke-WebRequest -UseBasicParsing "http://www.bing.com/HPImageA
 $bingResponseJson = ConvertFrom-Json $bingResponse.Content
 $bingResponseJson.images | %{
     $title = $_.copyright
-    $fname = "$(Split-Path -Leaf $_.urlbase).jpg"
+    $fname = "$($_.startdate)_$($_.hsh).jpg"
     $file = Join-Path $TargetDir $fname
     
     If (Test-Path -Type Leaf $file) {
